@@ -1,0 +1,8 @@
+enum4linux -a (IP) | tee enum4_output.txt
+
+echo -e 'user\nmsfadmin\nservice' smb_users.txt
+
+medusa -h (IP) -U smb_users.txt -M smbnt -t 2 -T 50
+
+smbclient -L //(IP) -U (USUARIO)
+
